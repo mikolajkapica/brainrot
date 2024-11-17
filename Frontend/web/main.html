@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type='text/javascript' src='/eel.js'></script>
+    <!-- <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script> -->
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
+    <link rel="stylesheet" href="./styles/main.css">
+    <title>Brainrot</title>
+</head>
+    <body>
+        <div class="main">
+            <div class="mode-picker">
+                <span class="switch-label">Boredom Mode</span>
+                <div>
+                    <input type="checkbox" id="toggle" class="checkbox" />
+                    <label for="toggle" class="switch"></label>
+                </div>
+            </div>
+            <div class="header">
+                <div>
+                    <h1>Brainrot</h1>
+                    <h1>Brainrot</h1>
+                    <h1>Brainrot</h1>
+                </div>
+            </div>
+            <div class="content display_none" data-device="true">
+                <div class="url-container">
+                    <input type="text" class="url-input" placeholder="Paste youtube video URL...">
+                </div>
+                <div id="player-wrapper" class="hidden">
+                    <div class="plyr__video-embed" id="player">
+                        <iframe
+                            src="https://www.youtube.com/embed/?origin=https://plyr.io&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1"
+                            allowfullscreen
+                            allowtransparency
+                            allow="autoplay"
+                        ></iframe>
+                        <div class="fullscreen-visible hidden" data-mode="attention">
+                            <div class="popup-icon">
+                                <img src="./imgs/forward.svg" alt="" class="popup-icon flip_horizontal">
+                            </div>
+                            <div class="popup-wrapper">
+                                <span>Lost attention?</span>
+                                <span class="description">Click to get back to where you lost it!</span>
+                            </div>
+                        </div>
+                        <div class="fullscreen-visible transparent" data-mode="boredom">
+                            <div class="popup-wrapper">
+                                <span>Getting bored?</span>
+                                <span class="description">Click to speed up the video!</span>
+                            </div>
+                            <div class="popup-icon">
+                                <img src="./imgs/forward.svg" alt="" class="popup-icon">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content" data-device="false">
+                <div class="device-wrapper">
+                    <span class="device-info-header">Choose your device:</span>
+                    <div class="spinner-wrapper">
+                        <span class="spinner"></span>
+                    </div>
+                    <div id="device-info">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <script type="module" src="./scripts/plyr.js"></script>
+        <script type='module' src="./scripts/main.js"></script>
+
+    </body>
+</html>
